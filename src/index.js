@@ -1,4 +1,4 @@
-"use strict";
+/* "use strict";
 //string, boolean, number...
 let x = 10;
 x = 12;
@@ -12,4 +12,6 @@ let firstName = "matheus";
 let age = 30;
 const isAdmin = true;
 //string != string
-console.log(typeof firstName);
+console.log(typeof firstName); */
+
+console.log(1, 2);
