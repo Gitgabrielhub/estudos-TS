@@ -26,3 +26,13 @@ let verification = data.map((element) => {
 });
 console.log(verification);
 console.log(abaixoDe30);
+const nintendo = {
+    nome: "nintendo pro",
+    preco: "2000"
+};
+console.log();
+function transformPrice() {
+    let transform = Number(nintendo.preco);
+    return transform;
+}
+console.log(transformPrice());
