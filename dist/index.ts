@@ -34,7 +34,7 @@ console.log(abaixoDe30)
 
 const nintendo = {
     nome:"nintendo pro",
-    preco: "2000"
+    preco: "2000",
 }
 console.log()
 
@@ -45,4 +45,20 @@ function transformPrice():number{
 console.log(transformPrice())
     
 
+function normalizarTexto(text:string):string{
+    return text.trim().toLowerCase();
+}
+console.log(normalizarTexto('aqui tem um erro'))
+
+
+let entradaValor = document.querySelector('input');
+let calculop = document.querySelector('p');
+
+function calc(e: Event):number{
+    e.preventDefault();
+    let valor = Number(entradaValor.value);
+    let total = 100-(0.20 * 100) + valor;
+    return total  
+}
+console.log(entradaValor.value)
 

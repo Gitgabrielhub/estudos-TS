@@ -36,3 +36,16 @@ function transformPrice() {
     return transform;
 }
 console.log(transformPrice());
+function normalizarTexto(text) {
+    return text.trim().toLowerCase();
+}
+console.log(normalizarTexto('aqui tem um erro'));
+let entradaValor = document.querySelector('input');
+let calculop = document.querySelector('p');
+function calc(e) {
+    e.preventDefault();
+    let valor = Number(entradaValor.value);
+    let total = 100 - (0.20 * 100) + valor;
+    return total;
+}
+console.log(entradaValor.value);
