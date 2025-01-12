@@ -25,6 +25,7 @@ const abaixoDe30:any[] = []
 
 let verification = data.map((element)=>{
     if(element.age < 30){
+        //abaixoDe30.filter(i => i.element != element  )
         return abaixoDe30.push(element)
     }
 })
@@ -52,13 +53,22 @@ console.log(normalizarTexto('aqui tem um erro'))
 
 
 let entradaValor = document.querySelector('input');
-let calculop = document.querySelector('p');
+const total = localStorage.getItem('value');
+entradaValor.value = total;
+let calculo = Number(entradaValor.value) + 100 - Number(entradaValor.value) * 0.2;
+calcGanho(Number(entradaValor))
 
-function calc(e: Event):number{
-    e.preventDefault();
-    let valor = Number(entradaValor.value);
-    let total = 100-(0.20 * 100) + valor;
-    return total  
+function calcGanho(value:number){
+    const p = document.querySelector('p');
+    let tela = p.innerText = `ganho total ${calculo}`
+    return tela
 }
-console.log(entradaValor.value)
+function totalMudou(){
+    localStorage.setItem('value', JSON.stringify(calculo));
+}
+
+
+if(entradaValor){
+    entradaValor.addEventListener('keyup',totalMudou )
+}
 
