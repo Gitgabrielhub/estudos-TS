@@ -1,13 +1,11 @@
-type dados = {
+import { DataProd } from './typeData'
+
+type Dados = {
     nome:string,
     price: number,
     teclado: boolean
 }
-function preencherDados(dados:{
-    nome:string,
-    price: number,
-    teclado: boolean
-}){
+function preencherDados(dados:DataProd){
     document.body.innerHTML = `
         <div>
             <h2>${dados.nome}</h2>
