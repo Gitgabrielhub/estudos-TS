@@ -36,5 +36,5 @@ let toNumber= (value: string | number) =>{
 
     }
 }
-// Number() !== toNumber(). o toNumber so converte string para numero se colocarmos um dado do tipo boolean ele me retorna um erro. o Number quando se passado um valor booleano retorna 0 para false e 1 para true  
+// Number() !== toNumber(). o toNumber so converte string para numero se colocarmos um dado do tipo boolean ele me retorna um erro. o Number quando se passado um valor booleano retorna 0 para false e 1 para true.  
 console.log(toNumber("10"))
