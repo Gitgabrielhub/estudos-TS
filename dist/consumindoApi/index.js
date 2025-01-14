@@ -6,19 +6,19 @@ async function fetchProduct() {
 function mostrarNaTela(data) {
     document.querySelector('#containerProducts').innerHTML = `
     <div id="divProducts">
-        <div>
+        <div class="product">
             <p>Nome do produto: ${data.nome}</p>
             <p> preço do produto: ${data.preco}</p>
             <p> preço do produto: ${data.descricao}</p>
             <p> preço do produto: ${data.garantia}</p>
         </div>
-        <div>
+        <div class="product">
             <p>Nome do produto: ${data.nome}</p>
             <p> preço do produto: ${data.preco}</p>
             <p> preço do produto: ${data.descricao}</p>
             <p> preço do produto: ${data.garantia}</p>
         </div>
-        <div>
+        <div class="product">
             <p>Nome do produto: ${data.nome}</p>
             <p> preço do produto: ${data.preco}</p>
             <p> preço do produto: ${data.descricao}</p>
