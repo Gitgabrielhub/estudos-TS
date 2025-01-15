@@ -31,14 +31,23 @@ async function consumirAPI(){
     mostrarRespostasDaApi(data)
 }
 
-function mostrarRespostasDaApi(data:any[]){
+function mostrarRespostasDaApi(data:Curso[]){
     data.forEach(curso => {
+        let color;
+        if(curso.nivel === "iniciante"){
+            color = "green"
+        }else if(curso.nivel === "avancado"){
+            color="red"
+        }
         return document.body.innerHTML += `
              <div>
                  <div>
-                     <h2>Curso: ${curso.nome}</h2>
+                     <h2 style=" ${color}">Curso: ${curso.nome}</h2>
                      <p>Horas: ${curso.horas}</p>
-                     <p>Tipo: ${curso.aulas}</p>
+                     <p>Aulas: ${curso.aulas}</p>
+                     <p>Tipo: ${curso.gratuito ? "Gratuito": "Pago"}</p>
+                     <p>Tags: ${curso.tags.join(", ")}</p>
+                     <p>Aulas: ${curso.idAulas.join(" | ")}</p>
                  </div>
              </div>
          ` 
