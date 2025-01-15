@@ -1,3 +1,5 @@
+import { Products } from "./products";
+
 async function fetchProduct() {
     const API = await fetch('https://api.origamid.dev/json/notebook.json');
     const data = await API.json()
