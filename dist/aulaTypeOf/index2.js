@@ -1,3 +1,4 @@
+"use strict";
 const frase = "front-end";
 const preco = 600;
 const cond = preco > 100;

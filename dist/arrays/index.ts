@@ -2,7 +2,7 @@ import { Curso } from "./dataInterface";
 
 const numeros: (string | number)[] = [10,20,'produto',30,40, 'preco' ,50,'taxa']
 
-function numerosMaior10(num:(string | number)[]){
+/* function numerosMaior10(num:(string | number)[]){
     const arrStrs: any[] =[]; 
     for(let i = 0; i<num.length; i++){
         if(num[i] > 10 && typeof num[i] !== 'string'){
@@ -12,7 +12,7 @@ function numerosMaior10(num:(string | number)[]){
             //console.log(arrStrs)
         }
     }
-}
+} */
 //numerosMaior10(numeros)
 
 const data:(string | number)[][] = [
