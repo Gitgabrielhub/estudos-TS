@@ -11,25 +11,26 @@ botao?.addEventListener('click', handleClick) */
 
 // menu lateral mobile
 
-const nav = document.querySelector('#nav');
-const btn = document.querySelector('#btn-mobile');
-function fecharMenu(){
-    if(nav instanceof HTMLElement){
-        if(nav.className === 'active'){
-            nav.className = ''
-            btn instanceof HTMLElement ?btn.ariaExpanded = "false" : true;
-            btn instanceof HTMLElement ?btn.ariaLabel = "Abrir menu": false;
-    }
-    }
-}
-nav?.addEventListener('click', ()=>{
-    if(nav instanceof HTMLElement){
-        nav.className = 'active'
-        btn instanceof HTMLElement ?btn.ariaExpanded = "true" : false;
-        btn instanceof HTMLElement ?btn.ariaLabel = "Fechar menu": false;
+const btnMobile = document.getElementById('btn-mobile');
 
+function toggleMenu(event: PointerEvent) {
+  const button = event.currentTarget;
+  const nav = document.getElementById('nav');
+  if (button instanceof HTMLElement && nav) {
+    const active = nav.classList.contains('active');
+    if (active) {
+      nav.classList.remove('active');
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-label', 'Abrir Menu');
+    } else {
+      nav.classList.add('active');
+      button.setAttribute('aria-expanded', 'true');
+      button.setAttribute('aria-label', 'Fechar Menu');
     }
-    
-})
+  }
+}
+
+btnMobile?.addEventListener('pointerdown', toggleMenu);
+
 
 
