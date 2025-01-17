@@ -1,17 +1,57 @@
 class Produto{
     nome:string;
-    preco:number;
+    
 
-    constructor(nome:string, preco:number){
+    constructor(nome:string){
         this.nome = nome;
-        this.preco = preco;
+        
     }
     precoReal(){
         let color = "red"
         let colorPrice = "yellow"
-        return document.body.innerHTML =  `O livro é <span style="color:${color} "> ${this.nome}</span> que custa R$ <span style="color:${colorPrice} ">${this.preco}</span>`
+        return document.body.innerHTML =  `O livro é <span style="color:${color} "> ${this.nome}</span> `
     }
 }
 
-const livro = new Produto('a arte da guerra',20.00)
-console.log(livro.precoReal())
+
+
+class Livro extends Produto{
+    autor:string;
+   
+
+    constructor(nome:string,autor:string){
+        super(nome)
+        this.autor = autor;
+        
+    }
+}
+class Jogo{
+    desenvolvedor:string;
+    constructor(desenvolvedor:string){
+        this.desenvolvedor = desenvolvedor
+    }
+}
+
+function buscarProducts(busca:string){
+    if(busca === 'a arte da guerra'){
+        return new Livro("a arte da guerra","Sun Tsu")
+    }
+    if(busca === "GTA Saandreas"){
+        return new Jogo("Rockstars games")
+    }
+    return null;
+}
+const book = buscarProducts("a arte da guerra");
+
+// o instaceof verifica se a função construtora herda de outra (extends).
+
+if(book instanceof Livro){
+    console.log(book.nome)
+}
+
+
+const link = document.getElementById('origamid');
+
+if(link){
+    console.dir(link)
+}
