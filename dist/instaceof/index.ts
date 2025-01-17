@@ -52,6 +52,7 @@ if(book instanceof Livro){
 
 const link = document.getElementById('origamid');
 
-if(link){
-    console.dir(link)
+if(link instanceof HTMLAnchorElement){
+    link.href = link.href.replace("http://","https://")
+    
 }
