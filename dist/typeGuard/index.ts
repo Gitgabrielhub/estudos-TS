@@ -23,11 +23,7 @@ typeGuard(document.body)
 const obj ={
     nome: "origamid"
 };
-if("preco" in obj){
-    console.log('yes')
-}else{
-    console.log("nono")
-}
+
 
 
 interface Produto{
@@ -68,3 +64,32 @@ function typeguard(value:unknown){
         return document.body.innerHTML
     }
 }
+
+// um Array nao pode ser verificada com o typeof pois um array é um objeto.
+// o que pode -se fazer fazer é verificar se o mesmo é uma intanceof de Array ou a função Array. is Array().
+
+
+async function fetchCursos(){
+    const response = await fetch('https://api.origamid.dev/json/cursos.json');
+    const json = await response.json();
+    rederCursos(json)
+}
+console.log('heloo')
+function rederCursos(data:unknown){
+    if(data instanceof Array){
+        console.log(data)
+    }
+}
+fetchCursos()
+
+// Type predicate ():arg is type é um recurso no qual podemos indicar qual o tipo de argumento uma função booleana (que retorna boolean ) recebeu para ser verdadeira.
+function isString(value: unknown): value is string{
+    return typeof value === "string";
+}
+function handleData(data:unknown){
+    if (isString(data)){
+        data.toLowerCase;
+    }
+}
+
+
